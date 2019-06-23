@@ -16,6 +16,10 @@ horaControl7: string;
 horaControl8: string;
 horaControl9: string;
 
+d = new Date();
+h = this.d.getHours();
+m = this.d.getMinutes();
+
   constructor(private renderer: Renderer2, public hechoService: HechoService) {
   }
 
@@ -32,7 +36,8 @@ horaControl9: string;
         } else {
            this.renderer.setStyle(this.elHoraControl7.nativeElement, 'backgroundColor', 'orange');
         }
-             this.horaControl7 = moment().format('LT');
+            //  this.horaControl7 = moment().format('LT');
+            this.horaControl7 = this.h + ":" + this.m;
              this.renderer.setStyle(this.elHoraControl7.nativeElement, 'padding', '15px');
     });
 
@@ -42,7 +47,8 @@ horaControl9: string;
         } else {
           this.renderer.setStyle(this.elHoraControl8.nativeElement, 'backgroundColor', 'orange');
         }
-        this.horaControl8 = moment().format('LT');
+        // this.horaControl8 = moment().format('LT');
+         this.horaControl8 = this.h + ":" + this.m;
         this.renderer.setStyle(this.elHoraControl8.nativeElement, 'padding', '15px');
     });
 
@@ -52,7 +58,8 @@ horaControl9: string;
         } else {
           this.renderer.setStyle(this.elHoraControl9.nativeElement, 'backgroundColor', 'orange');
         }
-        this.horaControl9 = moment().format('LT');
+        // this.horaControl9 = moment().format('LT');
+         this.horaControl9 = this.h + ":" + this.m;
         this.renderer.setStyle(this.elHoraControl9.nativeElement, 'padding', '15px');
     });
   }
